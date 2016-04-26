@@ -9,7 +9,7 @@ In this tutorial, you will learn how to run the DJI Android SDK Sample Code usin
 ## Prerequisites
 
 - Android Studio 1.5 or higher
-- Android API Level 22 or lower
+- Android API Level 22 or higher
 
 ## Registering an App Key
 
