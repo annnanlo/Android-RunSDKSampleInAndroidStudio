@@ -76,10 +76,51 @@ Please make sure your DJI Remote Controller supports [AOA](https://source.androi
 
 > Note: To upgrade your DJI Remote Controller's firmware, you can download the **DJI Go** app from Google Play Store: <https://play.google.com/store/apps/details?id=dji.pilot> and open it. Connect the DJI Go app to your remote controller and upgrade its firmware.
 
-Once you finish it, build and run the project on your Android Device. Then connect the Android device to the Remote Controller, turn on the Remote Controller and the aircraft or handheld device. You can start to try different features in the sample project now! 
+Once you finish it, build and run the project on your Android Device. Then connect the Android device to the Remote Controller, turn on the Remote Controller and the aircraft or handheld device. 
+
+### Checking Default App Settings
+
+Sometimes, developers may meet the problem of connecting their DJI SDK-based application to the DJI remote controller (USB accessory). This may because there is more than one SDK-based app(Like DJI Go app) installed on their mobile devices and one of the app is set as default for the USB accessory. So everytime the app connects to the DJI remote controller, the android system will use the chosen app as default to connect.
+
+#### 1. Samsung device:
+
+  For example, if DJI GO app and a SDK-based app(DJI-SDKDemo3) are installed in your samsung device(Here we use Samsung S6) together, when the Samsung device connects to a DJI remote controller using USB cable, you may see the following screenshot:
+
+  ![](./Images/samsung_connectRC.png)
+  
+  The android system of Samsung mobile is different from other mobile devices, the pop-up dialog only shows which app you would open, but doesn't provide you an option to decide whether to run it only once or run it always. Once you select an app, the android system would take it as the default app and whenever you connect the Samsung mobile device and a DJI remote controller, the chosen app would run automatically. 
+  
+  Here is the solution for you to fix this problem:
+  
+  If the DJI GO app is the chosen app, go to the Settings->Applications->Application Manager->DJI GO->Set as default, you may see the following screenshot:
+  
+  ![](./Images/samsung_clearDefaults.png)
+
+  Click on the **CLEAR DEFAULTS** button and reconnect the mobile device to the remote controller, you would find that you could choose the default app again. 
+
+#### 2. Google Nexus device:
+
+ Similarly, when DJI Go app and the SDK-based app(DJI-SDKDemo3) are installed in an android device(Here we use Nexus 6) together, when the mobile device connects to a DJI remote controller using USB cable, you may see the following screenshot:
+  
+  ![](./Images/defaultApp_nexus6_002.jpg)
+  
+ Click on the app you want to set and choose "JUST ONCE" or "ALWAYS". If your choice is "ALWAYS", this dialog won't pop up again and the chosen app will be set as the default app.
+
+ If the DJI GO app is the chosen app, firstly, go to the Settings->Apps->DJI GO->Open by default, you may see the following screenshot:
+ 
+ ![](./Images/defaultApp_nexus6_001.jpg)
+
+ Click on the **CLEAR DEFAULTS** button. 
+
+ Moreover, if you want to change the default app from DJI GO to the SDK-based app, please make sure they are both killed in the background. You can click on the delete button on the upper right corner to close the app like the screenshot shown below:
+ 
+ ![](./Images/defaultApp_nexus6_003.jpg)
+ 
+ Once you finish the above two steps, reconnect the mobile device to the remote controller, you would find that you can choose the default app again.
+
+ Now you can start to try different features in the sample project now! 
 
 Here are the screenshots when you run the Sample app on Phantom 3 Professional successfully:
 
 ![sampleCodeScreenshot1](./Images/sampleCodeScreenshot1.png)
 ![sampleCodeScreenshot1](./Images/sampleCodeScreenshot2.png)
-
